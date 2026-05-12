@@ -4,15 +4,17 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/src/assets/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Homepage - Hlegal</title>
+    <title>About Us - Hlegal</title>
   </head>
   <body>
-    <header class="header header--transparent">
+    <header class="header">
       <div class="container header__container">
         <div class="header__logo-group">
-          <a href="index.html" class="logo">
-            <img src="/src/assets/logo-white.svg" alt="Hlegal Law Company" />
+          <a href="/" class="logo">
+            <img src="/src/assets/logo.svg" alt="Hlegal Law Company" />
           </a>
+          <img src="/src/assets/slash.svg" alt="/" class="header__slash" />
+          <span class="header__page-name">about us</span>
         </div>
 
         <div class="header__content">
@@ -53,7 +55,7 @@
               </button>
 
               <ul class="nav__list">
-                <li class="nav__item">
+                <li class="nav__item active">
                   <a href="about.html" class="nav__link">about us</a>
                 </li>
                 <li class="nav__item">
@@ -77,28 +79,6 @@
         </button>
       </div>
     </header>
-
-    <main>
-      <section class="hero">
-        <div class="container hero__container">
-          <div class="hero__bg-letter">
-            <img src="/src/assets/h-hero.svg" alt="H background" />
-          </div>
-
-          <h1 class="hero__title">you legal solutions provider</h1>
-
-          <a href="#next" class="hero__scroll" aria-label="Scroll down">
-            <img src="/src/assets/scroll.svg" alt="Scroll" />
-          </a>
-        </div>
-      </section>
-
-      <div class="hero-stripes">
-        <div class="hero-stripes__dark"></div>
-        <div class="hero-stripes__light"></div>
-      </div>
-    </main>
-
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

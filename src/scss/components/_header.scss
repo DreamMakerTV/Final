@@ -1,0 +1,453 @@
+.header {
+  background-color: #ffffff;
+  padding-top: 50px;
+  padding-bottom: 0;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  // --- ЛЕВАЯ ЧАСТЬ ---
+  &__logo-group {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 6px;
+
+    .logo img {
+      height: 60px;
+      width: auto;
+      display: block;
+    }
+
+    .header__slash {
+      height: 47px;
+      margin: 0 4px;
+      transform: translateY(-6px);
+    }
+
+    .header__page-name {
+      font-size: 36px;
+      font-weight: 400;
+      color: $color-main-regular;
+      line-height: 1;
+      transform: translateY(-8px);
+    }
+  }
+
+  // --- ПРАВАЯ ЧАСТЬ ---
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 16px;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  &__langs {
+    display: flex;
+
+    .lang {
+      font-size: 12px;
+      font-weight: 700;
+      color: $color-grey-text;
+      background-color: #ffffff;
+      padding: 5px 7px;
+      border-radius: 8px;
+      transition: 0.3s;
+
+      &.active {
+        background-color: $color-accent;
+        color: #ffffff;
+      }
+
+      &:hover:not(.active) {
+        background-color: $color-grey-bg;
+        color: $color-main-regular;
+      }
+    }
+  }
+
+  .address,
+  .phone,
+  .dot {
+    font-size: 16px;
+    color: $color-grey-text;
+    font-style: normal;
+  }
+
+  .address a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $color-accent;
+    }
+  }
+
+  .phone {
+    font-weight: 700;
+    color: $color-grey-text;
+    text-decoration: none;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $color-accent;
+    }
+  }
+
+  .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: $color-grey-separator;
+    display: block;
+  }
+
+  .social-link {
+    display: flex;
+    align-items: center;
+    transition: filter 0.3s;
+
+    &:hover img {
+      // Идеально точная математическая формула для цвета #F0145A
+      filter: brightness(0) saturate(100%) invert(18%) sepia(81%)
+        saturate(4971%) hue-rotate(330deg) brightness(97%) contrast(103%);
+    }
+  }
+
+  .nav {
+    &__overlay,
+    &__close {
+      display: none;
+    }
+    &__inner {
+      width: 100%;
+    }
+    &__list {
+      display: flex;
+      gap: 15px;
+    }
+
+    &__link {
+      font-size: 16px;
+      font-weight: 700;
+      color: $color-active-regular;
+      display: inline-block;
+      padding-bottom: 5px;
+      position: relative;
+      transition: color 0.3s;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 2px;
+        background-color: transparent;
+        transition: 0.3s;
+      }
+
+      &:hover {
+        color: $color-active-hover;
+
+        &::after {
+          background-color: $color-active-regular;
+        }
+      }
+    }
+
+    &__item.active .nav__link {
+      color: $color-accent;
+
+      &::after {
+        background-color: $color-accent;
+      }
+    }
+  }
+
+  // =========================================
+  // МОДИФИКАТОР: ТЕМНАЯ ТЕМА (ПРОЗРАЧНЫЙ ХЕДЕР)
+  // =========================================
+  &--transparent {
+    background-color: transparent;
+    position: absolute; // Вырываем из потока, чтобы положить поверх темного фона
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 50;
+
+    .header__top {
+      background-color: transparent; // Убираем серую плашку на мобилках
+    }
+
+    // Делаем текст белым
+    .header__page-name,
+    .address,
+    .address a,
+    .phone {
+      color: #ffffff;
+    }
+
+    // Точки (.dot) НЕ трогаем, они остаются $color-grey-separator по макету
+
+    // На десктопе ссылки меню белые (мобильное меню не трогаем, там фон останется белым)
+    @media (min-width: 992px) {
+      .nav__link {
+        color: #ffffff;
+
+        &:hover {
+          color: $color-active-hover;
+        }
+      }
+    }
+
+    // Языки
+    .lang {
+      color: #ffffff;
+      background-color: transparent;
+
+      &:hover:not(.active) {
+        background-color: rgba(
+          255,
+          255,
+          255,
+          0.2
+        ); // Полупрозрачный белый ховер
+        color: #ffffff;
+      }
+    }
+
+    // Делаем иконку фейсбука белой
+    .social-link img {
+      filter: brightness(0) invert(1);
+    }
+
+    .social-link:hover img {
+      // Идеально точная математическая формула для цвета #F0145A
+      filter: brightness(0) saturate(100%) invert(18%) sepia(81%)
+        saturate(4971%) hue-rotate(330deg) brightness(97%) contrast(103%);
+    }
+
+    // Бургер делаем белым, чтобы его было видно на темном
+    .hamburger img {
+      filter: brightness(0) invert(1);
+    }
+  }
+} // <-- ЗДЕСЬ ЗАКРЫВАЕТСЯ .header
+
+// =========================================
+// АДАПТИВ: ПЛАНШЕТЫ И ТЕЛЕФОНЫ
+// =========================================
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+
+  img {
+    width: 32px;
+    height: 32px;
+    display: block;
+  }
+}
+
+// --- ПЛАНШЕТ (Tablet ~ до 991px) ---
+@media (max-width: 991px) {
+  .header {
+    padding-top: 30px;
+
+    &__container {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 30px;
+    }
+
+    &__content {
+      display: contents;
+    }
+
+    &__top {
+      order: 1;
+      width: 100%;
+      justify-content: flex-start;
+    }
+
+    &__logo-group {
+      order: 2;
+      margin-bottom: 0;
+    }
+
+    .nav {
+      order: 3;
+      width: 100%;
+      overflow-x: auto;
+      padding-bottom: 5px;
+    }
+  }
+}
+
+// --- МОБИЛКА (Mobile ~ до 767px) ---
+@media (max-width: 767px) {
+  .header {
+    padding-top: 0;
+    padding-bottom: 15px;
+
+    &__container {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      grid-template-areas:
+        "top top"
+        "logo burger";
+      gap: 15px 0;
+      align-items: center;
+    }
+
+    &__content {
+      display: contents;
+    }
+
+    &__top {
+      grid-area: top;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: $color-grey-bg;
+      width: auto;
+      margin-left: -15px;
+      margin-right: -15px;
+      padding: 10px 15px;
+    }
+
+    &__langs {
+      .lang {
+        background-color: transparent;
+
+        &.active {
+          background-color: $color-accent;
+          color: #ffffff;
+        }
+      }
+    }
+
+    &__logo-group {
+      grid-area: logo;
+      margin-bottom: 0;
+
+      .logo img {
+        height: 40px;
+      }
+
+      .header__slash {
+        height: 32px;
+        transform: translateY(-4px);
+      }
+
+      .header__page-name {
+        font-size: 24px;
+        transform: translateY(-5px);
+      }
+    }
+
+    .hamburger {
+      grid-area: burger;
+      display: block;
+      justify-self: end;
+      transform: translateY(-6px);
+    }
+
+    .address,
+    .dot,
+    .social-link {
+      display: none;
+    }
+
+    .nav {
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 100;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+
+      &.open {
+        opacity: 1;
+        pointer-events: all;
+
+        .nav__inner {
+          transform: translateY(0);
+        }
+      }
+
+      &__overlay {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(50, 50, 100, 0.7);
+      }
+
+      &__inner {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        border-radius: 12px 12px 0 0;
+        padding: 12px;
+        transform: translateY(100%);
+        transition: transform 0.3s ease;
+      }
+
+      &__close {
+        display: block;
+        background: none;
+        border: none;
+        padding: 0;
+        margin-left: auto;
+        margin-bottom: 15px;
+        cursor: pointer;
+      }
+
+      &__list {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      &__link {
+        display: block;
+        text-align: center;
+        font-size: 24px;
+        background-color: $color-grey-bg;
+        border-radius: 12px;
+        padding: 7px 0;
+
+        &::after {
+          display: none;
+        }
+      }
+
+      &__item.active .nav__link {
+        color: $color-accent;
+        background-color: $color-grey-separator;
+      }
+    }
+  }
+}

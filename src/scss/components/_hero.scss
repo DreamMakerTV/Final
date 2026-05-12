@@ -1,0 +1,107 @@
+.hero {
+  // Используем твою готовую переменную из _vars.scss!
+  background: $gradient-supersoft;
+
+  // Высота пока на весь экран, потом подгоним под контент
+  min-height: 100vh;
+  padding-top: 150px;
+  position: relative;
+
+  // Закругления внизу, как на макете (12px)
+  border-radius: 0 0 12px 12px;
+  overflow: hidden;
+
+  // Flexbox для того, чтобы растянуть контейнер на всю высоту
+  display: flex;
+  flex-direction: column;
+
+  &__container {
+    flex-grow: 1; // Занимает всё доступное место
+    display: flex;
+    flex-direction: column;
+    justify-content: center; // Центрируем контент по вертикали
+    align-items: center; // Центрируем по горизонтали
+    position: relative;
+    width: 100%;
+  }
+
+  &__bg-letter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); // Идеальное центрирование
+    z-index: 1; // Кладем БУКВУ на задний план
+
+    img {
+      // Здесь можно будет подкрутить высоту, если она из Фигмы кажется другой
+      max-height: 85vh;
+      width: auto;
+    }
+  }
+
+  &__title {
+    position: relative;
+    z-index: 2; // Кладем ТЕКСТ поверх буквы
+    font-size: 38px; // Проверь этот размер в Фигме, если нужно — поправь!
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+    margin: 0;
+  }
+
+  &__scroll {
+    position: absolute;
+    bottom: 30px; // Прибиваем кнопку к низу секции
+    left: 50%;
+    transform: translateX(-50%); // Центрируем по горизонтали
+    z-index: 10;
+
+    img {
+      display: block; // Убираем дефолтный отступ снизу у картинок
+      width: 42px; // Указываем размер из Фигмы на всякий случай
+      height: 42px;
+    }
+
+    // При наведении на ссылку (<a>), меняем фильтр у картинки (<img>)
+    &:hover img {
+      // Идеальная формула для твоего фирменного #F0145A
+      filter: brightness(0) saturate(100%) invert(18%) sepia(81%)
+        saturate(4971%) hue-rotate(330deg) brightness(97%) contrast(103%);
+    }
+  }
+}
+
+// Декоративные полоски
+.hero-stripes {
+  width: 100%;
+
+  &__dark {
+    width: 1400px;
+    height: 10px;
+    min-height: 10px; // Жестко фиксируем высоту
+    max-height: 10px;
+    background-color: rgba(202, 202, 219, 1);
+    border-radius: 0 0 12px 12px;
+    margin: 0 auto; // Центрируем блок
+  }
+
+  &__light {
+    width: 1360px;
+    height: 10px;
+    min-height: 10px; // Жестко фиксируем высоту
+    max-height: 10px;
+    background-color: rgba(231, 231, 242, 1);
+    border-radius: 0 0 12px 12px;
+    margin: 0 auto; // Центрируем блок
+  }
+}
+
+// Адаптив для полосок на мелких экранах
+@media (max-width: 1440px) {
+  .hero-stripes__dark {
+    width: 95%;
+  }
+  .hero-stripes__light {
+    width: 90%;
+  }
+}
