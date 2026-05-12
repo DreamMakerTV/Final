@@ -1,0 +1,125 @@
+.footer {
+  background-color: $color-grey-bg;
+  padding-bottom: 30px;
+  padding-top: 0;
+
+  &__container {
+    border-top: 2px solid $color-grey-separator;
+    padding-top: 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__address {
+    font-size: 16px;
+    color: $color-main-regular;
+    font-style: normal;
+  }
+
+  &__map {
+    font-size: 12px;
+    font-weight: 700;
+    color: $color-active-regular;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+
+    &:hover {
+      color: $color-accent;
+    }
+  }
+
+  &__social {
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 38px;
+      height: 38px;
+      filter: brightness(0) saturate(100%) invert(46%) sepia(97%)
+        saturate(1636%) hue-rotate(186deg) brightness(101%) contrast(103%);
+    }
+
+    &:hover img {
+      filter: brightness(0) saturate(100%) invert(18%) sepia(81%)
+        saturate(4971%) hue-rotate(330deg) brightness(97%) contrast(103%);
+    }
+  }
+
+  &__phone {
+    font-size: 16px;
+    font-weight: 700;
+    color: $color-main-alt;
+    text-decoration: none;
+
+    &:hover {
+      color: $color-accent;
+    }
+  }
+
+  &__email {
+    font-size: 16px;
+    font-weight: 700;
+    color: $color-active-regular;
+    text-decoration: none;
+
+    &:hover {
+      color: $color-accent;
+    }
+  }
+
+  &__copyright {
+    font-size: 16px;
+    color: $color-grey-text;
+    margin: 0;
+  }
+
+  .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: $color-grey-separator;
+    display: block;
+  }
+}
+
+@media (max-width: 991px) {
+  .footer {
+    &__container {
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+
+    &__left {
+      align-items: center;
+    }
+
+    &__row {
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .dot {
+      display: none;
+    }
+
+    &__right {
+      margin-top: 10px;
+    }
+  }
+}

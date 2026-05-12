@@ -2,12 +2,361 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/src/assets/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>final</title>
+    <title>Homepage - Hlegal</title>
   </head>
   <body>
-    <div id="app"></div>
+    <header class="header header--transparent">
+      <div class="container header__container">
+        <div class="header__logo-group">
+          <a href="index.html" class="logo">
+            <img src="/src/assets/logo-white.svg" alt="Hlegal Law Company" />
+          </a>
+        </div>
+
+        <div class="header__content">
+          <div class="header__top">
+            <div class="header__langs">
+              <a href="#" class="lang">УК</a>
+              <a href="#" class="lang">РУ</a>
+              <a href="#" class="lang active">EN</a>
+            </div>
+            <span class="dot"></span>
+            <address class="address">
+              <a
+                href="https://maps.app.goo.gl/UYKts7rFspb2g1nC8"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Kyiv, Mechnikova str, 14/1
+              </a>
+            </address>
+            <span class="dot"></span>
+            <a href="tel:0800211927" class="phone">0800 211 927</a>
+            <span class="dot"></span>
+            <a href="#" class="social-link">
+              <img src="/src/assets/facebook.svg" alt="Facebook" />
+            </a>
+          </div>
+
+          <nav class="nav" id="menu">
+            <div class="nav__overlay" id="menu-overlay"></div>
+
+            <div class="nav__inner">
+              <button
+                class="nav__close"
+                id="menu-close"
+                aria-label="Close menu"
+              >
+                <img src="/src/assets/Close.svg" alt="Close" />
+              </button>
+
+              <ul class="nav__list">
+                <li class="nav__item">
+                  <a href="about.html" class="nav__link">about us</a>
+                </li>
+                <li class="nav__item">
+                  <a href="#" class="nav__link">services</a>
+                </li>
+                <li class="nav__item">
+                  <a href="#" class="nav__link">team</a>
+                </li>
+                <li class="nav__item">
+                  <a href="#" class="nav__link">publications</a>
+                </li>
+                <li class="nav__item">
+                  <a href="#" class="nav__link">contact</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Open menu">
+          <img src="/src/assets/Hamburger.svg" alt="Menu" />
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero-combined">
+        <div class="hero-combined__bg-letter">
+          <img src="/src/assets/h-hero.svg" alt="h" />
+        </div>
+        <div class="container">
+          <div class="hero-combined__intro">
+            <h1 class="hero-combined__main-title">
+              you legal solutions provider
+            </h1>
+            <a href="#tabs" class="hero-combined__scroll">
+              <img src="/src/assets/Scroll.svg" alt="Scroll" />
+            </a>
+          </div>
+
+          <div class="hero-tabs" id="tabs">
+            <div class="hero-tabs__nav">
+              <button class="hero-tabs__btn active">Consistent</button>
+              <button class="hero-tabs__btn">Customer oriented</button>
+              <button class="hero-tabs__btn">Innovative</button>
+              <button class="hero-tabs__btn">Business oriented</button>
+            </div>
+            <div class="hero-tabs__divider"></div>
+            <div class="hero-tabs__content">
+              <h2 class="hero-tabs__title">
+                We turn over the idea of legal services
+              </h2>
+              <p class="hero-tabs__text">
+                Consolidating many years of experience and practice, the
+                company's lawyers accompany complex projects and achieve the
+                adoption of a number of decisions that are important for the
+                industry. Many people form the practice of applying the law of
+                the sea in Ukraine.
+              </p>
+            </div>
+          </div>
+
+          <div class="advantages">
+            <a href="/services.html" class="advantages__link">Services</a>
+            <h2 class="advantages__title">
+              What can we do better than others?
+            </h2>
+
+            <div class="advantages__grid">
+              <div class="advantage-card">
+                <div class="advantage-card__icon">
+                  <img src="/src/assets/Ecommerce.svg" alt="" />
+                </div>
+                <h4 class="advantage-card__title">IT and e-commerce</h4>
+                <p class="advantage-card__desc">
+                  An endless stream of contracts, tax issues, labor relations,
+                  corporate papers - legal work distracts you from doing
+                  business.
+                </p>
+              </div>
+              <div class="advantage-card">
+                <div class="advantage-card__icon">
+                  <img src="/src/assets/Support.svg" alt="" />
+                </div>
+                <h4 class="advantage-card__title">
+                  Comprehensive daily legal support
+                </h4>
+                <p class="advantage-card__desc">
+                  In addition, over time, the work will become the same type and
+                  uninteresting for a full-time lawyer. And we know very well
+                  how difficult it is to find a good candidate with experience
+                  in the field of information technology in Ukraine.
+                </p>
+              </div>
+              <div class="advantage-card">
+                <div class="advantage-card__icon">
+                  <img src="/src/assets/Coprorate.svg" alt="" />
+                </div>
+                <h4 class="advantage-card__title">
+                  Structuring corporate relationships
+                </h4>
+                <p class="advantage-card__desc">
+                  Instead of just providing legal services, we will hire a
+                  lawyer or a whole team that will fit into the daily life of
+                  your company.
+                </p>
+              </div>
+              <div class="advantage-card">
+                <div class="advantage-card__icon">
+                  <img src="/src/assets/Trust.svg" alt="" />
+                </div>
+                <h4 class="advantage-card__title">
+                  Building contractual relations
+                </h4>
+                <p class="advantage-card__desc">
+                  Once a week, or week after month, you have your own lawyer by
+                  your side. Anyone in the company can catch it at the coffee
+                  maker and just talk about current affairs instead of waiting
+                  for update status.
+                </p>
+              </div>
+              <div class="advantage-card">
+                <div class="advantage-card__icon">
+                  <img src="/src/assets/Protection.svg" alt="" />
+                </div>
+                <h4 class="advantage-card__title">
+                  Protection of business, intellectual property
+                </h4>
+                <p class="advantage-card__desc">
+                  And all the other time he will work on new diverse projects,
+                  so he will definitely not stop in professional development.
+                  One way or another, all Axon Partners will work for you
+                  instead of a corporate lawyer.
+                </p>
+              </div>
+              <div class="advantage-card">
+                <div class="advantage-card__icon">
+                  <img src="/src/assets/Court.svg" alt="" />
+                </div>
+                <h4 class="advantage-card__title">Judicial representation</h4>
+                <p class="advantage-card__desc">
+                  Is it a small, medium-sized company or a market leader? Do you
+                  have your own legal department or not?
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="hero-stripes">
+        <div class="hero-stripes__dark"></div>
+        <div class="hero-stripes__light"></div>
+      </div>
+
+      <section class="team-story">
+        <div class="container">
+          <div class="swiper story-slider">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="story-card">
+                  <div class="story-card__image">
+                    <img src="/src/assets/image.png" alt="Person" />
+                  </div>
+                  <div class="story-card__content">
+                    <p class="story-card__label">Team</p>
+                    <h2 class="story-card__title">
+                      Quality is what we care about the most.
+                    </h2>
+                    <p class="story-card__name">Oleksandr Alexandrovskyi</p>
+                    <p class="story-card__pos">Managing Partner</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="clients">
+        <h3 class="clients__title">They already trust us</h3>
+        <div class="clients__grid">
+          <div class="client-box">
+            <img src="/src/assets/hillel.svg" alt="Hillel" />
+          </div>
+          <div class="client-box">
+            <img src="/src/assets/wannabiz.svg" alt="Wannabiz" />
+          </div>
+          <div class="client-box">
+            <img src="/src/assets/tapgerine.svg" alt="Tapgerine" />
+          </div>
+          <div class="client-box">
+            <img src="/src/assets/3dlook.svg" alt="3DLook" />
+          </div>
+          <div class="client-box">
+            <img src="/src/assets/orangear.svg" alt="OrangeEar" />
+          </div>
+          <div class="client-box">
+            <img src="/src/assets/adtelligent.svg" alt="Adtelligent" />
+          </div>
+          <div class="client-box">
+            <img src="/src/assets/clickky.svg" alt="Clickky" />
+          </div>
+          <div class="client-box">
+            <img src="/src/assets/eco-leasing.svg" alt="Eco Lease" />
+          </div>
+          <div class="client-box">
+            <img src="/src/assets/infratek.svg" alt="Infratek" />
+          </div>
+          <div class="client-box">
+            <img src="/src/assets/city-par.svg" alt="City Par" />
+          </div>
+          <div class="client-box">
+            <img src="/src/assets/artprint.svg" alt="ArtPrint" />
+          </div>
+          <div class="client-box">
+            <img src="/src/assets/ultimatecard.svg" alt="Ultimate Card" />
+          </div>
+        </div>
+      </section>
+
+      <section class="news">
+        <div class="container news__container">
+          <a href="#" class="news__link">Publications</a>
+          <h2 class="news__title">We have something to tell</h2>
+          <div class="news__grid">
+            <article class="news-card">
+              <img src="/src/assets/news1.png" alt="" class="news-card__img" />
+              <div class="news-card__body">
+                <h4>Equity associate</h4>
+                <p class="news-card__date">APRIL 22</p>
+                <hr />
+                <p class="news-card__text">
+                  I'm a jun on projects. I am a co-owner of a law firm. How it
+                  happened. Before entering my parents told me that if I…
+                </p>
+              </div>
+            </article>
+            <article class="news-card">
+              <img src="/src/assets/news2.png" alt="" class="news-card__img" />
+              <div class="news-card__body">
+                <h4>Penalty for the late arrival of the invoice</h4>
+                <p class="news-card__date">SEPTEMBER 29</p>
+                <hr />
+                <p class="news-card__text">
+                  And why the recovery of 50 million euros could be a fateful
+                  precedent According to Mind.ua January 21 National Commission
+                  for Data Protection.
+                </p>
+              </div>
+            </article>
+            <article class="news-card">
+              <img src="/src/assets/news3.png" alt="" class="news-card__img" />
+              <div class="news-card__body">
+                <h4>Millennial Testament</h4>
+                <p class="news-card__date">AUGUST 19</p>
+                <hr />
+                <p class="news-card__text">
+                  What and how modern vloggers, opinion leaders and
+                  crypto-millionaires will inherit A typical legacy of the
+                  Ukrainian generation X looks like this: an apartment in…
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container footer__container">
+        <div class="footer__left">
+          <div class="footer__row footer__row--address">
+            <address class="footer__address">
+              Kyiv, Mechnikova str, 14/1
+            </address>
+            <span class="dot"></span>
+            <a
+              href="https://maps.app.goo.gl/UYKts7rFspb2g1nC8"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="footer__map"
+              >ON MAP</a
+            >
+          </div>
+
+          <div class="footer__row footer__row--contacts">
+            <a href="#" class="footer__social" aria-label="Facebook">
+              <img src="/src/assets/facebook.svg" alt="Facebook" />
+            </a>
+            <span class="dot"></span>
+            <a href="tel:0800211927" class="footer__phone">0800 211 927</a>
+            <span class="dot"></span>
+            <a href="mailto:contact@forstudy.space" class="footer__email"
+              >contact@forstudy.space</a
+            >
+          </div>
+        </div>
+
+        <div class="footer__right">
+          <p class="footer__copyright">© 2021 HLEGAL Law company, LLC</p>
+        </div>
+      </div>
+    </footer>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

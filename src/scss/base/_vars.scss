@@ -1,0 +1,52 @@
+// --- Шрифты ---
+$font-main: "Montserrat", sans-serif;
+
+// --- Цвета ---
+$color-main-regular: rgba(50, 50, 100, 1);
+$color-main-alt: rgba(70, 70, 110, 1);
+$color-main-soft: rgba(104, 104, 135, 1);
+$color-accent: rgba(240, 20, 90, 1);
+$color-active-regular: rgba(36, 163, 255, 1);
+$color-active-hover: rgba(0, 133, 255, 1);
+$color-active-active: rgba(0, 108, 207, 1);
+$color-basic-white: #ffffff;
+
+// --- Серые ---
+$color-grey-bg: rgba(245, 245, 250, 1);
+$color-grey-bg-alt: rgba(237, 237, 247, 1);
+$color-grey-text: rgba(179, 179, 186, 1);
+$color-grey-separator: rgba(230, 230, 240, 1);
+
+// --- Градиенты ---
+$gradient-main: linear-gradient(
+  128.63deg,
+  rgba(50, 50, 100, 1) 0%,
+  rgba(50, 50, 100, 1) 73.96%,
+  rgba(165, 75, 95, 1) 100%
+);
+
+$gradient-soft: linear-gradient(
+  42.01deg,
+  rgba(50, 50, 100, 1) 14.33%,
+  rgba(50, 50, 100, 1) 51.39%,
+  rgba(122, 66, 94, 1) 87.53%
+);
+
+$gradient-red: linear-gradient(
+  323.35deg,
+  rgba(240, 20, 90, 1) 6.7%,
+  rgba(105, 50, 100, 1) 70.36%
+);
+
+$gradient-supersoft: linear-gradient(
+  228.57deg,
+  rgba(50, 50, 100, 1) 11.93%,
+  rgba(50, 50, 100, 1) 57.17%,
+  rgba(100, 62, 114, 1) 87.46%
+);
+
+$gradient-red-text: linear-gradient(
+  90.13deg,
+  rgba(240, 20, 90, 1) 0.84%,
+  rgba(239, 128, 128, 1) 99.96%
+);
