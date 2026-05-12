@@ -8,7 +8,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: $font-main;
-  background-color: $color-grey-bg;
+  background-color: $color-basic-white;
   color: $color-main-regular;
   -webkit-font-smoothing: antialiased;
 }
@@ -19,29 +19,24 @@ body {
 }
 
 html {
-  // Для Firefox
   scrollbar-width: none;
-  // Для старых версий Edge и IE
   -ms-overflow-style: none;
 }
 
-// Сброс отступов для списков (раз уж мы убираем точки)
 ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-// Обязательное правило для гибких картинок из чек-листа
 img {
   max-width: 100%;
   height: auto;
 }
 
-// Наш главный центрующий контейнер
 .container {
   max-width: 1400px;
-  /* Если в макете ширина контента другая — просто поменяй эту цифру! */
+
   margin: 0 auto;
   padding: 0 15px;
 }
@@ -53,9 +48,8 @@ img {
 html.lock,
 body.lock {
   overflow: hidden;
-  touch-action: none; // Запрещаем свайпы пальцем на мобилках при открытом меню
+  touch-action: none;
 }
-// Класс для отключения всех анимаций при ресайзе окна
 .resize-animation-stopper * {
   animation: none !important;
   transition: none !important;

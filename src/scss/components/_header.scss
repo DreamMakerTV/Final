@@ -9,7 +9,6 @@
     align-items: flex-end;
   }
 
-  // --- ЛЕВАЯ ЧАСТЬ ---
   &__logo-group {
     display: flex;
     align-items: center;
@@ -37,7 +36,6 @@
     }
   }
 
-  // --- ПРАВАЯ ЧАСТЬ ---
   &__content {
     display: flex;
     flex-direction: column;
@@ -118,7 +116,6 @@
     transition: filter 0.3s;
 
     &:hover img {
-      // Идеально точная математическая формула для цвета #F0145A
       filter: brightness(0) saturate(100%) invert(18%) sepia(81%)
         saturate(4971%) hue-rotate(330deg) brightness(97%) contrast(103%);
     }
@@ -175,22 +172,18 @@
     }
   }
 
-  // =========================================
-  // МОДИФИКАТОР: ТЕМНАЯ ТЕМА (ПРОЗРАЧНЫЙ ХЕДЕР)
-  // =========================================
   &--transparent {
     background-color: transparent;
-    position: absolute; // Вырываем из потока, чтобы положить поверх темного фона
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 50;
 
     .header__top {
-      background-color: transparent; // Убираем серую плашку на мобилках
+      background-color: transparent;
     }
 
-    // Делаем текст белым
     .header__page-name,
     .address,
     .address a,
@@ -198,56 +191,43 @@
       color: #ffffff;
     }
 
-    // Точки (.dot) НЕ трогаем, они остаются $color-grey-separator по макету
-
-    // На десктопе ссылки меню белые (мобильное меню не трогаем, там фон останется белым)
     @media (min-width: 992px) {
       .nav__link {
         color: #ffffff;
 
         &:hover {
-          color: $color-active-hover;
+          color: #ffffff;
+          &::after {
+            background-color: #ffffff;
+          }
         }
       }
     }
 
-    // Языки
     .lang {
       color: #ffffff;
       background-color: transparent;
 
       &:hover:not(.active) {
-        background-color: rgba(
-          255,
-          255,
-          255,
-          0.2
-        ); // Полупрозрачный белый ховер
+        background-color: rgba(255, 255, 255, 0.2);
         color: #ffffff;
       }
     }
 
-    // Делаем иконку фейсбука белой
     .social-link img {
       filter: brightness(0) invert(1);
     }
 
     .social-link:hover img {
-      // Идеально точная математическая формула для цвета #F0145A
       filter: brightness(0) saturate(100%) invert(18%) sepia(81%)
         saturate(4971%) hue-rotate(330deg) brightness(97%) contrast(103%);
     }
 
-    // Бургер делаем белым, чтобы его было видно на темном
     .hamburger img {
       filter: brightness(0) invert(1);
     }
   }
-} // <-- ЗДЕСЬ ЗАКРЫВАЕТСЯ .header
-
-// =========================================
-// АДАПТИВ: ПЛАНШЕТЫ И ТЕЛЕФОНЫ
-// =========================================
+}
 
 .hamburger {
   display: none;
@@ -263,7 +243,6 @@
   }
 }
 
-// --- ПЛАНШЕТ (Tablet ~ до 991px) ---
 @media (max-width: 991px) {
   .header {
     padding-top: 30px;
@@ -298,7 +277,6 @@
   }
 }
 
-// --- МОБИЛКА (Mobile ~ до 767px) ---
 @media (max-width: 767px) {
   .header {
     padding-top: 0;

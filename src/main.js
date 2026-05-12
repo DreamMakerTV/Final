@@ -1,5 +1,10 @@
 import './scss/style.scss'
 
+import Swiper from 'swiper';
+import { Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
+
 document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.getElementById('hamburger');
     const menu = document.getElementById('menu');
@@ -9,14 +14,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (hamburger && menu) {
         const openMenu = () => {
             menu.classList.add('open');
-            // Надежно блокируем скролл (страница никуда не дернется, так как скроллбара и так нет)
-            document.documentElement.classList.add('lock'); 
+            document.documentElement.classList.add('lock');
             document.body.classList.add('lock');
         };
 
         const closeMenu = () => {
             menu.classList.remove('open');
-            // Снимаем блокировку
             document.documentElement.classList.remove('lock');
             document.body.classList.remove('lock');
         };
@@ -38,4 +41,27 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.classList.remove('resize-animation-stopper');
         }, 400);
     });
+    const achievementsSlider = document.querySelector('.achievements-slider');
+    
+    if (achievementsSlider) {
+        new Swiper('.achievements-slider', {
+            modules: [Pagination],
+            slidesPerView: 1,
+            spaceBetween: 20,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,   // Чтобы на точки можно было кликать
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 30
+                },
+                1024: {
+                    slidesPerView: 4,
+                    spaceBetween: 40
+                }
+            }
+        });
+    }
 });
